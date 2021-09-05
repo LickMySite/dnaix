@@ -1,5 +1,3 @@
-
-
 a{
   text-decoration: none;
   font-size: larger;
@@ -21,22 +19,18 @@ body{
 
 /* unvisited link */
 a:link {
-  color: red;
 }
 
 /* visited link */
 a:visited {
-  color: green;
 }
 
 /* mouse over link */
 a:hover {
-  color: hotpink;
 }
 
 /* selected link */
 a:active {
-  color: blue;
 }
 
 .nav
@@ -50,6 +44,31 @@ a:active {
   background-color: #dda;
   display: flex;
   padding: 4px;
+}
+
+.button
+{
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 6px 4px;
+  cursor: pointer;
+  border-style:outset;
+  border-width: 4px;
+  border-radius: 2px;
+  color: rgb(248, 242, 242);
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  background-color: rgb(89, 207, 85);
+}
+
+.button:hover{
+  border-style: inset;
+  background-color: rgb(56, 153, 53);
+  transform: translate(3px,3px);
 }
 
 .link
@@ -73,4 +92,22 @@ pre.show
   min-width: 300px;
   max-width: 35%;
   z-index: 1;
+}
+
+.error-container
+{
+  margin: auto;
+  padding: 10px;
+  min-height: 10vh;
+  background-color: rgb(148, 148, 141);
+  border-style: double solid solid double;
+  border-radius: 10px;
+  min-width: 80%;
+  max-width: 90%;
+  text-align: center;
+}
+
+.text-align
+{
+  text-align: center;
 }

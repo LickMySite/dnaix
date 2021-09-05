@@ -41,7 +41,8 @@ Class App
 	{
 
 		$url = isset($_GET['url']) ? $_GET['url'] : "home";
-		return explode("/", filter_var(trim($url,"/"),FILTER_SANITIZE_URL));
+		$url = htmlentities($url, ENT_QUOTES, 'UTF-8');
+		return explode("/", filter_var(trim($url,"/"),FILTER_SANITIZE_URL, FILTER_FLAG_PATH_REQUIRED));
  	}
 
 }
