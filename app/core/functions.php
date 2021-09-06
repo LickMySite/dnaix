@@ -55,4 +55,16 @@ function if_exists($data, $folder) {
 		$url = htmlentities($url, ENT_QUOTES, 'UTF-8');
 		return explode("/", filter_var(trim($url,"/"),FILTER_SANITIZE_URL, FILTER_FLAG_PATH_REQUIRED));
  	}
+	
+	 function viewDir()
+	 {
+		 $arr = [];
+		foreach(glob('../app/views/page/*', GLOB_ONLYDIR) as $dir) {
+			
+			$array[] = basename($dir);
+return $array;
+		}
+					//$dir = array($dir);
+			
+	 }
 

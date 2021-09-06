@@ -2,7 +2,7 @@
 
 Class Settings
 {
-	private $error = array();
+	//private $error = array();
 	protected static $SETTINGS = null;
 
 	public function get_all_settings()

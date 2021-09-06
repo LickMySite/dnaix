@@ -39,6 +39,19 @@ Class Navigate
       ';
     }
  
+		foreach(glob('../app/views/page/*', GLOB_ONLYDIR) as $dir) {
+			$dir = basename($dir);
+
+      $result .= '
+      <li class="nav">
+        <a href="'.ROOT.$dir.'/" class="link" style="color:blue;">'.ucwords($dir). '</a>
+      </li>
+        ';
+
+    }
+
     return $result;
   }
+
+  
 }

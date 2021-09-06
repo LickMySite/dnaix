@@ -1,12 +1,10 @@
 <?php
 
-Class Home extends Controller
+Class Router extends Controller
 {
 	public function index($url)
 	{
-		$URLS = parseURL();
-
-		$data['page_title'] = $URLS;
+		$data['page_title'] = parseURL();
 
 		if(isset($data['page_title'][1])){
 			if(if_exists($data['page_title'][1], 'page/'.$data['page_title'][0].'/') != true)
@@ -19,8 +17,12 @@ Class Home extends Controller
 				$data['nav_data'] = $nav_data;
 			}
 		}else{
-			if(if_exists($data['page_title'][0], 'page/') != true)
-			{
+
+			$dir = glob('../app/views/page/*', GLOB_ONLYDIR);
+			//$dir = array(basename($dir));
+			show($dir);
+			if(if_exists($data['page_title'][0], 'page/') != true && in_array("../app/views/page/".$data['page_title'][0],$dir) != true)
+			{show('regsaergsertgweaghwrtheweht whwwh');
 				$index = '404';
 			}else{
 				$index = 'index';

@@ -16,9 +16,16 @@
 
 //show($URLS);
 if(isset($data['page_title'][1])){
-  $this->view("page/".$data['page_title'][0]."/".$data['page_title'][1]);
+  $this->view("page/".$data['page_title'][0]."/".$data['page_title'][1], $data);
 }else{
-  $this->view("page/".$data['page_title'][0]);
+  if(!if_exists($data['page_title'][0],'page/'))
+  {
+     $this->view("page/".$data['page_title'][0]."/index", $data);
+    
+  }else{
+   $this->view("page/".$data['page_title'][0], $data);
+   
+  }
 }
 ?>
 
