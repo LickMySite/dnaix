@@ -10,6 +10,7 @@ Class Navigate
     $pages = str_replace('.php','',$pages);
 
     $result = '';
+  
 
     foreach ($pages as $page)
     {
@@ -27,6 +28,7 @@ Class Navigate
 		$pages = str_replace($sitefolder,'',$sitefiles);
     $pages = str_replace('.php','',$pages);
 
+    
 
     foreach ($pages as $page)
     {

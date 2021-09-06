@@ -4,33 +4,27 @@
   <?=$this->view("layout/head",$data);?>
 </head>  
 <body>
-<?=show($data);?>
 
   <header>
     <?=$this->view("layout/nav",$data);?>
   </header>
-<h1>This is the <b><?=ucwords($data['page_title'][0])?><b> page</h1>
-
-
+<h1><b><?=pageTitle($data['page'])?><b></h1>
+<div class='big'>
 <?php
+$this->view($data['page'], $data);
+li_files_folders('../app/views/page/');
 
-//show($URLS);
-if(isset($data['page_title'][1])){
-  $this->view("page/".$data['page_title'][0]."/".$data['page_title'][1], $data);
-}else{
-  if(!if_exists($data['page_title'][0],'page/'))
-  {
-     $this->view("page/".$data['page_title'][0]."/index", $data);
-    
-  }else{
-   $this->view("page/".$data['page_title'][0], $data);
-   
-  }
-}
+
 ?>
-
+</div>
 <footer class='footer'>
-    <?=$this->view("layout/footer",$data);?>
+
+    <?php
+    $this->view("layout/footer",$data);
+    
+  
+    ?>
+
 </footer>
 
 </body>

@@ -7,10 +7,12 @@ a{
 body{
   overflow: auto;
 }
-
+.big{
+  min-height: 1500px;
+}
 .footer{
-  position: fixed;
-  left: 0;
+  margin: 4px;
+  padding-top: 4px;
   bottom: 0;
   width: 100%;
   min-height: 10vh;

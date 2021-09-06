@@ -16,9 +16,6 @@
 </div>
 </div>
 <hr>
-<?php
-show($data['page_title']);
-?>
 </body>
 </html>
 

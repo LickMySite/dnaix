@@ -5,16 +5,15 @@ Class Controller
 
 	public function view($url,$data = [])
 	{
-
  		if(is_array($data)){
  			extract($data);
 		}
 
 		if(file_exists("../app/views/" . THEME . $url . ".php"))
 		{
-			include "../app/views/" . THEME . $url . ".php";
+			include_once "../app/views/" . THEME . $url . ".php";
 		}else{
-			include "../app/views/" . THEME . "404.php";
+			include_once "../app/views/" . THEME . "404.php";
 		}
 	}
 

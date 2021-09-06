@@ -1,13 +1,12 @@
 <?php
 
-$err = "404";
-$folder = "app";
-$file = "init";
-$file_path = "../".$folder."/".$file.".php";
+$init = '../app/init.php';
 
-if(file_exists($file_path))
+if(file_exists($init))
 {
-	require $file_path;
+	$app_path = require_once $init;
+	return $app_path;
 }else{
-	require $err.".html";
+	$err_path = require_once '404.php';
+	return $err_path;
 }

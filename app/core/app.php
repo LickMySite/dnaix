@@ -2,7 +2,6 @@
 
 Class App 
 {
-
 	protected $controller = "router";
 	protected $method = "index";
 	protected $params;
@@ -12,10 +11,9 @@ Class App
 		$url = $this->parseURL();
 		$url[0] = str_replace("-", "_", $url[0]);
 
-
-		if(file_exists("../app/controllers/". THEME . strtolower($url[0]) . ".php"))
+		if(file_exists("../app/controllers/". THEME . $url[0] . ".php"))
 		{
-			$this->controller = strtolower($url[0]);
+			$this->controller = $url[0];
 			unset($url[0]);
 		}
 
@@ -24,7 +22,6 @@ Class App
 
 		if(isset($url[1]))
 		{
-			$url[1] = strtolower($url[1]);
 			if(method_exists($this->controller, $url[1]))
 			{
 				$this->method = $url[1];
@@ -39,9 +36,9 @@ Class App
 
 	private function parseURL()
 	{
-
 		$url = isset($_GET['url']) ? $_GET['url'] : "home";
 		$url = htmlentities($url, ENT_QUOTES, 'UTF-8');
+		$url = strtolower($url);
 		return explode("/", filter_var(trim($url,"/"),FILTER_SANITIZE_URL, FILTER_FLAG_PATH_REQUIRED));
  	}
 
